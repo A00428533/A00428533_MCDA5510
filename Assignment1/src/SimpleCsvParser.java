@@ -39,16 +39,16 @@ public class SimpleCsvParser {
 						filePath = f.getAbsoluteFile().toString();
 						fileName = filePath.substring(filePath.lastIndexOf("/"));
 						filePath = pathLength(filePath, fileName);
-				        
-				        String dd = filePath.substring(filePath.lastIndexOf("/"));
-				        filePath = pathLength(filePath, dd);
-				        
-				        String mm = filePath.substring(filePath.lastIndexOf("/"));
-				        filePath = pathLength(filePath, mm);
-				        
-				        String yy = filePath.substring(filePath.lastIndexOf("/")+1);
-				        String Date = yy + mm + dd;
-				        filePath = f.getAbsoluteFile().toString();
+
+						String dd = filePath.substring(filePath.lastIndexOf("/"));
+						filePath = pathLength(filePath, dd);
+
+						String mm = filePath.substring(filePath.lastIndexOf("/"));
+						filePath = pathLength(filePath, mm);
+
+						String yy = filePath.substring(filePath.lastIndexOf("/")+1);
+						String Date = yy + mm + dd;
+						filePath = f.getAbsoluteFile().toString();
 						//date = dateFormat.format(f.lastModified());
 						sCSVParser.path(filePath, fileName, Date);
 					}
@@ -123,8 +123,8 @@ public class SimpleCsvParser {
 							sucessCustomerList.add(cDTO);
 							if(sucessCustomerList!=null)
 							{
-							sCSVParser1.writeToCSV(sucessCustomerList);
-							Assignmnet_MSCDA5510_A00428533.Valid++;
+								sCSVParser1.writeToCSV(sucessCustomerList);
+								Assignmnet_MSCDA5510_A00428533.Valid++;
 							}
 						}
 					}
@@ -144,15 +144,15 @@ public class SimpleCsvParser {
 			logger.log(Level.SEVERE, "File reading exception" + e);
 		}
 	}
-	  public String pathLength(String filePath, String fname) {
-		  filePath = filePath.substring(0, filePath.length() - fname.length());
-		    return filePath;
-		  }
+	public String pathLength(String filePath, String fname) {
+		filePath = filePath.substring(0, filePath.length() - fname.length());
+		return filePath;
+	}
 
 	public void writeToCSV(ArrayList<CustomerDTO> sucessCustomerList) {
 		PrintWriter pw=null;
 		try {
-	              pw = new PrintWriter(new FileOutputStream(new File("/home/student_2018_fall/a_gupta/Data_A00428533.csv"), true));
+			pw = new PrintWriter(new FileOutputStream(new File("/home/student_2018_fall/a_gupta/Data_A00428533.csv"), true));
 			for (CustomerDTO a : sucessCustomerList) {
 				{
 					StringBuilder sb = new StringBuilder();
@@ -190,7 +190,7 @@ public class SimpleCsvParser {
 			logger.log(Level.SEVERE, "File not found thrown" + e);
 		} finally {
 			if(pw!=null){
-           pw.close();
+				pw.close();
 			}
 		}
 
