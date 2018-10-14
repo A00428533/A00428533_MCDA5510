@@ -1,0 +1,6 @@
+Oct 14, 2018 6:07:58 PM MySQLAccess CreateResultSetInTable
+INFO: Successfully inserted record in the table transaction
+Oct 14, 2018 6:08:26 PM MySQLAccess updateRecord
+INFO: Record successfully updated for the record
+Oct 14, 2018 6:08:38 PM MySQLAccess deleteRecord
+INFO:  Record successfully deleted for the given ID
