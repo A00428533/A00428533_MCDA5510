@@ -1,0 +1,107 @@
+18-Nov-2018 23:43:20.177 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.13
+18-Nov-2018 23:43:20.180 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 2 2018 14:27:55 UTC
+18-Nov-2018 23:43:20.180 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.13.0
+18-Nov-2018 23:43:20.180 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+18-Nov-2018 23:43:20.180 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.4.0-138-generic
+18-Nov-2018 23:43:20.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+18-Nov-2018 23:43:20.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-oracle/jre
+18-Nov-2018 23:43:20.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_77-b03
+18-Nov-2018 23:43:20.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+18-Nov-2018 23:43:20.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13
+18-Nov-2018 23:43:20.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13
+18-Nov-2018 23:43:20.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/conf/logging.properties
+18-Nov-2018 23:43:20.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Nov-2018 23:43:20.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Nov-2018 23:43:20.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+18-Nov-2018 23:43:20.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+18-Nov-2018 23:43:20.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+18-Nov-2018 23:43:20.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13
+18-Nov-2018 23:43:20.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13
+18-Nov-2018 23:43:20.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/temp
+18-Nov-2018 23:43:20.183 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+18-Nov-2018 23:43:20.357 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8089"]
+18-Nov-2018 23:43:20.377 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+18-Nov-2018 23:43:20.400 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+18-Nov-2018 23:43:20.403 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+18-Nov-2018 23:43:20.403 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector[AJP/1.3-8009]]
+ org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:883)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:646)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:306)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:491)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1080)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:550)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:973)
+	... 13 more
+
+18-Nov-2018 23:43:20.405 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 834 ms
+18-Nov-2018 23:43:20.446 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Nov-2018 23:43:20.447 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.13
+18-Nov-2018 23:43:20.470 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/Assignement_Singleton.war]
+18-Nov-2018 23:43:21.763 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Nov-2018 23:43:22.153 WARNING [main] org.apache.axis.utils.JavaUtils.isAttachmentSupported Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+18-Nov-2018 23:43:22.305 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/Assignement_Singleton.war] has finished in [1,835] ms
+18-Nov-2018 23:43:22.305 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/Assignement_SingletonClient.war]
+18-Nov-2018 23:43:22.565 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Nov-2018 23:43:22.568 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/Assignement_SingletonClient.war] has finished in [263] ms
+18-Nov-2018 23:43:22.569 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/host-manager]
+18-Nov-2018 23:43:22.597 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/host-manager] has finished in [28] ms
+18-Nov-2018 23:43:22.598 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/manager]
+18-Nov-2018 23:43:22.618 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/manager] has finished in [20] ms
+18-Nov-2018 23:43:22.618 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/ROOT]
+18-Nov-2018 23:43:22.632 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/ROOT] has finished in [14] ms
+18-Nov-2018 23:43:22.632 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/docs]
+18-Nov-2018 23:43:22.647 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/docs] has finished in [15] ms
+18-Nov-2018 23:43:22.647 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/examples]
+18-Nov-2018 23:43:22.847 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/examples] has finished in [199] ms
+18-Nov-2018 23:43:22.850 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8089"]
+18-Nov-2018 23:43:22.863 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2457 ms
+18-Nov-2018 23:44:05.409 INFO [http-nio-8089-exec-4] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/Assignement_Singleton]
+18-Nov-2018 23:44:09.204 INFO [http-nio-8089-exec-8] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/Assignement_SingletonClient]
+18-Nov-2018 23:44:27.980 INFO [http-nio-8089-exec-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/Assignement_Singleton.war]
+18-Nov-2018 23:44:28.634 INFO [http-nio-8089-exec-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Nov-2018 23:44:28.770 WARNING [http-nio-8089-exec-2] org.apache.axis.utils.JavaUtils.isAttachmentSupported Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+18-Nov-2018 23:44:28.908 INFO [http-nio-8089-exec-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/Assignement_Singleton.war] has finished in [929] ms
+18-Nov-2018 23:44:41.202 INFO [http-nio-8089-exec-6] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/Assignement_SingletonClient.war]
+18-Nov-2018 23:44:41.743 INFO [http-nio-8089-exec-6] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Nov-2018 23:44:41.748 INFO [http-nio-8089-exec-6] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/student_2018_fall/a_gupta/Assisgnmet3/apache-tomcat-9.0.13/webapps/Assignement_SingletonClient.war] has finished in [547] ms
+18-Nov-2018 23:45:07.409 WARNING [http-nio-8089-exec-14] org.apache.axis.utils.JavaUtils.isAttachmentSupported Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+18-Nov-2018 23:46:19.525 SEVERE [http-nio-8089-exec-19] com.smu.dao.TransactionDAO.readDataBase Exception in query execution
+18-Nov-2018 23:46:56.031 SEVERE [http-nio-8089-exec-14] com.smu.dao.TransactionDAO.createResultSetInTable Exception in CreateResultSetInTable method
+18-Nov-2018 23:48:59.973 SEVERE [http-nio-8089-exec-18] com.smu.dao.TransactionDAO.createResultSetInTable Exception in CreateResultSetInTable method
+18-Nov-2018 23:50:20.923 SEVERE [http-nio-8089-exec-14] com.smu.dao.TransactionDAO.readDataBase Exception in query execution
+18-Nov-2018 23:54:10.613 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+18-Nov-2018 23:54:10.615 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8089"]
+18-Nov-2018 23:54:10.624 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+18-Nov-2018 23:54:10.624 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Nov-2018 23:54:10.650 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [Assignement_Singleton] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Nov-2018 23:54:10.651 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Assignement_Singleton] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:70)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+ java.lang.Thread.run(Thread.java:745)
+18-Nov-2018 23:54:10.715 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8089"]
+18-Nov-2018 23:54:10.727 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8089"]
+18-Nov-2018 23:54:10.729 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+18-Nov-2018 23:54:10.729 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
