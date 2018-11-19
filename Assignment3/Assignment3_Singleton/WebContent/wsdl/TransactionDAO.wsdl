@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://dao.smu.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://dao.smu.com" xmlns:intf="http://dao.smu.com" xmlns:tns1="http://dto.smu.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://dao.smu.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://dto.smu.com"/>
+   <element name="readDataBase">
+    <complexType>
+     <sequence>
+      <element name="trnxId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="readDataBaseResponse">
+    <complexType>
+     <sequence>
+      <element name="readDataBaseReturn" type="tns1:TransactionDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteRecord">
+    <complexType>
+     <sequence>
+      <element name="txnID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteRecordResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteRecordReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateRecord">
+    <complexType>
+     <sequence>
+      <element name="ID" type="xsd:int"/>
+      <element name="nameOnCard" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateRecordResponse">
+    <complexType>
+     <sequence>
+      <element name="updateRecordReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createResultSetInTable">
+    <complexType>
+     <sequence>
+      <element name="ID" type="xsd:int"/>
+      <element name="NameOnCard" type="xsd:string"/>
+      <element name="CardNumber" type="xsd:string"/>
+      <element name="UnitPrice" type="xsd:string"/>
+      <element name="Quantity" type="xsd:string"/>
+      <element name="ExpDate" type="xsd:string"/>
+      <element name="CreditCardType" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createResultSetInTableResponse">
+    <complexType>
+     <sequence>
+      <element name="createResultSetInTableReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://dto.smu.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="TransactionDTO">
+    <sequence>
+     <element name="ID" type="xsd:int"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="createdBy" nillable="true" type="xsd:string"/>
+     <element name="createdOn" nillable="true" type="xsd:dateTime"/>
+     <element name="creditCardType" nillable="true" type="xsd:string"/>
+     <element name="expDate" nillable="true" type="xsd:string"/>
+     <element name="nameOnCard" nillable="true" type="xsd:string"/>
+     <element name="qty" type="xsd:int"/>
+     <element name="totalPrice" type="xsd:double"/>
+     <element name="unitPrice" type="xsd:double"/>
+     <element name="value" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="deleteRecordRequest">
+
+      <wsdl:part element="impl:deleteRecord" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRecordResponse">
+
+      <wsdl:part element="impl:deleteRecordResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createResultSetInTableRequest">
+
+      <wsdl:part element="impl:createResultSetInTable" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateRecordRequest">
+
+      <wsdl:part element="impl:updateRecord" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createResultSetInTableResponse">
+
+      <wsdl:part element="impl:createResultSetInTableResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readDataBaseResponse">
+
+      <wsdl:part element="impl:readDataBaseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readDataBaseRequest">
+
+      <wsdl:part element="impl:readDataBase" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateRecordResponse">
+
+      <wsdl:part element="impl:updateRecordResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TransactionDAO">
+
+      <wsdl:operation name="readDataBase">
+
+         <wsdl:input message="impl:readDataBaseRequest" name="readDataBaseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:readDataBaseResponse" name="readDataBaseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteRecord">
+
+         <wsdl:input message="impl:deleteRecordRequest" name="deleteRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteRecordResponse" name="deleteRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateRecord">
+
+         <wsdl:input message="impl:updateRecordRequest" name="updateRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateRecordResponse" name="updateRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createResultSetInTable">
+
+         <wsdl:input message="impl:createResultSetInTableRequest" name="createResultSetInTableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createResultSetInTableResponse" name="createResultSetInTableResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TransactionDAOSoapBinding" type="impl:TransactionDAO">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="readDataBase">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="readDataBaseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="readDataBaseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createResultSetInTable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createResultSetInTableRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createResultSetInTableResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TransactionDAOService">
+
+      <wsdl:port binding="impl:TransactionDAOSoapBinding" name="TransactionDAO">
+
+         <wsdlsoap:address location="http://localhost:8015/Assignment3_Singleton/services/TransactionDAO"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

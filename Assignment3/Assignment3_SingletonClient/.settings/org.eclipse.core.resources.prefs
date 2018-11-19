@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/com/smu/dao/TransactionDAO.java=UTF-8
+encoding//src/com/smu/dao/TransactionDAOService.java=UTF-8
+encoding//src/com/smu/dao/TransactionDAOServiceLocator.java=UTF-8
+encoding//src/com/smu/dao/TransactionDAOSoapBindingStub.java=UTF-8
+encoding//src/com/smu/dto/TransactionDTO.java=UTF-8

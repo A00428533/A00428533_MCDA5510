@@ -1,0 +1,10 @@
+Nov 19, 2018 3:32:06 AM com.smu.dao.TransactionDAO readDataBase
+INFO: Successfully read the record in the table transaction
+Nov 19, 2018 3:33:09 AM com.smu.dao.TransactionDAO readDataBase
+INFO: Successfully read the record in the table transaction
+Nov 19, 2018 3:34:02 AM com.smu.dao.TransactionDAO createResultSetInTable
+INFO: Successfully inserted record in the table transaction
+Nov 19, 2018 3:34:18 AM com.smu.dao.TransactionDAO updateRecord
+INFO: Successfully updated record in the table transaction
+Nov 19, 2018 3:34:24 AM com.smu.dao.TransactionDAO deleteRecord
+INFO:  Record successfully deleted for the given ID1016
