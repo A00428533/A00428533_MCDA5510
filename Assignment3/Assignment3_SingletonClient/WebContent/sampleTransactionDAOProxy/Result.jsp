@@ -63,12 +63,89 @@ if(getTransactionDAO10mtemp == null){
 break;
 case 13:
         gotMethod = true;
-        String trnxId_1id=  request.getParameter("trnxId38");
-        int trnxId_1idTemp  = Integer.parseInt(trnxId_1id);
-        com.smu.dto.TransactionDTO readDataBase13mtemp = sampleTransactionDAOProxyid.readDataBase(trnxId_1idTemp);
-if(readDataBase13mtemp == null){
+        String ID_1id=  request.getParameter("ID16");
+        int ID_1idTemp  = Integer.parseInt(ID_1id);
+        String nameOnCard_2id=  request.getParameter("nameOnCard18");
+            java.lang.String nameOnCard_2idTemp = null;
+        if(!nameOnCard_2id.equals("")){
+         nameOnCard_2idTemp  = nameOnCard_2id;
+        }
+        String cardNumber_3id=  request.getParameter("cardNumber20");
+            java.lang.String cardNumber_3idTemp = null;
+        if(!cardNumber_3id.equals("")){
+         cardNumber_3idTemp  = cardNumber_3id;
+        }
+        String unitPrice_4id=  request.getParameter("unitPrice22");
+            java.lang.String unitPrice_4idTemp = null;
+        if(!unitPrice_4id.equals("")){
+         unitPrice_4idTemp  = unitPrice_4id;
+        }
+        String quantity_5id=  request.getParameter("quantity24");
+            java.lang.String quantity_5idTemp = null;
+        if(!quantity_5id.equals("")){
+         quantity_5idTemp  = quantity_5id;
+        }
+        String expDate_6id=  request.getParameter("expDate26");
+            java.lang.String expDate_6idTemp = null;
+        if(!expDate_6id.equals("")){
+         expDate_6idTemp  = expDate_6id;
+        }
+        String creditCardType_7id=  request.getParameter("creditCardType28");
+            java.lang.String creditCardType_7idTemp = null;
+        if(!creditCardType_7id.equals("")){
+         creditCardType_7idTemp  = creditCardType_7id;
+        }
+        java.lang.String createResultSetInTable13mtemp = sampleTransactionDAOProxyid.createResultSetInTable(ID_1idTemp,nameOnCard_2idTemp,cardNumber_3idTemp,unitPrice_4idTemp,quantity_5idTemp,expDate_6idTemp,creditCardType_7idTemp);
+if(createResultSetInTable13mtemp == null){
 %>
-<%=readDataBase13mtemp %>
+<%=createResultSetInTable13mtemp %>
+<%
+}else{
+        String tempResultreturnp14 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(createResultSetInTable13mtemp));
+        %>
+        <%= tempResultreturnp14 %>
+        <%
+}
+break;
+case 30:
+        gotMethod = true;
+        String ID_8id=  request.getParameter("ID33");
+        int ID_8idTemp  = Integer.parseInt(ID_8id);
+        String nameOnCard_9id=  request.getParameter("nameOnCard35");
+            java.lang.String nameOnCard_9idTemp = null;
+        if(!nameOnCard_9id.equals("")){
+         nameOnCard_9idTemp  = nameOnCard_9id;
+        }
+        java.lang.String updateRecord30mtemp = sampleTransactionDAOProxyid.updateRecord(ID_8idTemp,nameOnCard_9idTemp);
+if(updateRecord30mtemp == null){
+%>
+<%=updateRecord30mtemp %>
+<%
+}else{
+        String tempResultreturnp31 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateRecord30mtemp));
+        %>
+        <%= tempResultreturnp31 %>
+        <%
+}
+break;
+case 37:
+        gotMethod = true;
+        String txnID_10id=  request.getParameter("txnID40");
+        int txnID_10idTemp  = Integer.parseInt(txnID_10id);
+        boolean deleteRecord37mtemp = sampleTransactionDAOProxyid.deleteRecord(txnID_10idTemp);
+        String tempResultreturnp38 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteRecord37mtemp));
+        %>
+        <%= tempResultreturnp38 %>
+        <%
+break;
+case 42:
+        gotMethod = true;
+        String trnxId_11id=  request.getParameter("trnxId67");
+        int trnxId_11idTemp  = Integer.parseInt(trnxId_11id);
+        com.smu.dto.TransactionDTO readDataBase42mtemp = sampleTransactionDAOProxyid.readDataBase(trnxId_11idTemp);
+if(readDataBase42mtemp == null){
+%>
+<%=readDataBase42mtemp %>
 <%
 }else{
 %>
@@ -80,11 +157,11 @@ if(readDataBase13mtemp == null){
 <TD COLSPAN="2" ALIGN="LEFT">createdBy:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
-java.lang.String typecreatedBy16 = readDataBase13mtemp.getCreatedBy();
-        String tempResultcreatedBy16 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecreatedBy16));
+if(readDataBase42mtemp != null){
+java.lang.String typecreatedBy45 = readDataBase42mtemp.getCreatedBy();
+        String tempResultcreatedBy45 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecreatedBy45));
         %>
-        <%= tempResultcreatedBy16 %>
+        <%= tempResultcreatedBy45 %>
         <%
 }%>
 </TD>
@@ -93,11 +170,11 @@ java.lang.String typecreatedBy16 = readDataBase13mtemp.getCreatedBy();
 <TD COLSPAN="2" ALIGN="LEFT">creditCardType:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
-java.lang.String typecreditCardType18 = readDataBase13mtemp.getCreditCardType();
-        String tempResultcreditCardType18 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecreditCardType18));
+if(readDataBase42mtemp != null){
+java.lang.String typecreditCardType47 = readDataBase42mtemp.getCreditCardType();
+        String tempResultcreditCardType47 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecreditCardType47));
         %>
-        <%= tempResultcreditCardType18 %>
+        <%= tempResultcreditCardType47 %>
         <%
 }%>
 </TD>
@@ -106,9 +183,9 @@ java.lang.String typecreditCardType18 = readDataBase13mtemp.getCreditCardType();
 <TD COLSPAN="2" ALIGN="LEFT">iD:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
+if(readDataBase42mtemp != null){
 %>
-<%=readDataBase13mtemp.getID()
+<%=readDataBase42mtemp.getID()
 %><%}%>
 </TD>
 <TR>
@@ -116,11 +193,11 @@ if(readDataBase13mtemp != null){
 <TD COLSPAN="2" ALIGN="LEFT">expDate:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
-java.lang.String typeexpDate22 = readDataBase13mtemp.getExpDate();
-        String tempResultexpDate22 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeexpDate22));
+if(readDataBase42mtemp != null){
+java.lang.String typeexpDate51 = readDataBase42mtemp.getExpDate();
+        String tempResultexpDate51 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeexpDate51));
         %>
-        <%= tempResultexpDate22 %>
+        <%= tempResultexpDate51 %>
         <%
 }%>
 </TD>
@@ -129,11 +206,11 @@ java.lang.String typeexpDate22 = readDataBase13mtemp.getExpDate();
 <TD COLSPAN="2" ALIGN="LEFT">nameOnCard:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
-java.lang.String typenameOnCard24 = readDataBase13mtemp.getNameOnCard();
-        String tempResultnameOnCard24 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typenameOnCard24));
+if(readDataBase42mtemp != null){
+java.lang.String typenameOnCard53 = readDataBase42mtemp.getNameOnCard();
+        String tempResultnameOnCard53 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typenameOnCard53));
         %>
-        <%= tempResultnameOnCard24 %>
+        <%= tempResultnameOnCard53 %>
         <%
 }%>
 </TD>
@@ -142,9 +219,9 @@ java.lang.String typenameOnCard24 = readDataBase13mtemp.getNameOnCard();
 <TD COLSPAN="2" ALIGN="LEFT">unitPrice:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
+if(readDataBase42mtemp != null){
 %>
-<%=readDataBase13mtemp.getUnitPrice()
+<%=readDataBase42mtemp.getUnitPrice()
 %><%}%>
 </TD>
 <TR>
@@ -152,9 +229,9 @@ if(readDataBase13mtemp != null){
 <TD COLSPAN="2" ALIGN="LEFT">value:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
+if(readDataBase42mtemp != null){
 %>
-<%=readDataBase13mtemp.getValue()
+<%=readDataBase42mtemp.getValue()
 %><%}%>
 </TD>
 <TR>
@@ -162,9 +239,9 @@ if(readDataBase13mtemp != null){
 <TD COLSPAN="2" ALIGN="LEFT">totalPrice:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
+if(readDataBase42mtemp != null){
 %>
-<%=readDataBase13mtemp.getTotalPrice()
+<%=readDataBase42mtemp.getTotalPrice()
 %><%}%>
 </TD>
 <TR>
@@ -172,9 +249,9 @@ if(readDataBase13mtemp != null){
 <TD COLSPAN="2" ALIGN="LEFT">qty:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
+if(readDataBase42mtemp != null){
 %>
-<%=readDataBase13mtemp.getQty()
+<%=readDataBase42mtemp.getQty()
 %><%}%>
 </TD>
 <TR>
@@ -182,13 +259,13 @@ if(readDataBase13mtemp != null){
 <TD COLSPAN="2" ALIGN="LEFT">createdOn:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
-java.util.Calendar typecreatedOn34 = readDataBase13mtemp.getCreatedOn();
-        java.text.DateFormat dateFormatcreatedOn34 = java.text.DateFormat.getDateInstance();
-        java.util.Date datecreatedOn34 = typecreatedOn34.getTime();
-        String tempResultcreatedOn34 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatcreatedOn34.format(datecreatedOn34));
+if(readDataBase42mtemp != null){
+java.util.Calendar typecreatedOn63 = readDataBase42mtemp.getCreatedOn();
+        java.text.DateFormat dateFormatcreatedOn63 = java.text.DateFormat.getDateInstance();
+        java.util.Date datecreatedOn63 = typecreatedOn63.getTime();
+        String tempResultcreatedOn63 = org.eclipse.jst.ws.util.JspUtils.markup(dateFormatcreatedOn63.format(datecreatedOn63));
         %>
-        <%= tempResultcreatedOn34 %>
+        <%= tempResultcreatedOn63 %>
         <%
 }%>
 </TD>
@@ -197,93 +274,16 @@ java.util.Calendar typecreatedOn34 = readDataBase13mtemp.getCreatedOn();
 <TD COLSPAN="2" ALIGN="LEFT">cardNumber:</TD>
 <TD>
 <%
-if(readDataBase13mtemp != null){
-java.lang.String typecardNumber36 = readDataBase13mtemp.getCardNumber();
-        String tempResultcardNumber36 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecardNumber36));
+if(readDataBase42mtemp != null){
+java.lang.String typecardNumber65 = readDataBase42mtemp.getCardNumber();
+        String tempResultcardNumber65 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typecardNumber65));
         %>
-        <%= tempResultcardNumber36 %>
+        <%= tempResultcardNumber65 %>
         <%
 }%>
 </TD>
 </TABLE>
 <%
-}
-break;
-case 40:
-        gotMethod = true;
-        String txnID_2id=  request.getParameter("txnID43");
-        int txnID_2idTemp  = Integer.parseInt(txnID_2id);
-        boolean deleteRecord40mtemp = sampleTransactionDAOProxyid.deleteRecord(txnID_2idTemp);
-        String tempResultreturnp41 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(deleteRecord40mtemp));
-        %>
-        <%= tempResultreturnp41 %>
-        <%
-break;
-case 45:
-        gotMethod = true;
-        String ID_3id=  request.getParameter("ID48");
-        int ID_3idTemp  = Integer.parseInt(ID_3id);
-        String nameOnCard_4id=  request.getParameter("nameOnCard50");
-            java.lang.String nameOnCard_4idTemp = null;
-        if(!nameOnCard_4id.equals("")){
-         nameOnCard_4idTemp  = nameOnCard_4id;
-        }
-        java.lang.String updateRecord45mtemp = sampleTransactionDAOProxyid.updateRecord(ID_3idTemp,nameOnCard_4idTemp);
-if(updateRecord45mtemp == null){
-%>
-<%=updateRecord45mtemp %>
-<%
-}else{
-        String tempResultreturnp46 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(updateRecord45mtemp));
-        %>
-        <%= tempResultreturnp46 %>
-        <%
-}
-break;
-case 52:
-        gotMethod = true;
-        String ID_5id=  request.getParameter("ID55");
-        int ID_5idTemp  = Integer.parseInt(ID_5id);
-        String nameOnCard_6id=  request.getParameter("nameOnCard57");
-            java.lang.String nameOnCard_6idTemp = null;
-        if(!nameOnCard_6id.equals("")){
-         nameOnCard_6idTemp  = nameOnCard_6id;
-        }
-        String cardNumber_7id=  request.getParameter("cardNumber59");
-            java.lang.String cardNumber_7idTemp = null;
-        if(!cardNumber_7id.equals("")){
-         cardNumber_7idTemp  = cardNumber_7id;
-        }
-        String unitPrice_8id=  request.getParameter("unitPrice61");
-            java.lang.String unitPrice_8idTemp = null;
-        if(!unitPrice_8id.equals("")){
-         unitPrice_8idTemp  = unitPrice_8id;
-        }
-        String quantity_9id=  request.getParameter("quantity63");
-            java.lang.String quantity_9idTemp = null;
-        if(!quantity_9id.equals("")){
-         quantity_9idTemp  = quantity_9id;
-        }
-        String expDate_10id=  request.getParameter("expDate65");
-            java.lang.String expDate_10idTemp = null;
-        if(!expDate_10id.equals("")){
-         expDate_10idTemp  = expDate_10id;
-        }
-        String creditCardType_11id=  request.getParameter("creditCardType67");
-            java.lang.String creditCardType_11idTemp = null;
-        if(!creditCardType_11id.equals("")){
-         creditCardType_11idTemp  = creditCardType_11id;
-        }
-        java.lang.String createResultSetInTable52mtemp = sampleTransactionDAOProxyid.createResultSetInTable(ID_5idTemp,nameOnCard_6idTemp,cardNumber_7idTemp,unitPrice_8idTemp,quantity_9idTemp,expDate_10idTemp,creditCardType_11idTemp);
-if(createResultSetInTable52mtemp == null){
-%>
-<%=createResultSetInTable52mtemp %>
-<%
-}else{
-        String tempResultreturnp53 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(createResultSetInTable52mtemp));
-        %>
-        <%= tempResultreturnp53 %>
-        <%
 }
 break;
 }

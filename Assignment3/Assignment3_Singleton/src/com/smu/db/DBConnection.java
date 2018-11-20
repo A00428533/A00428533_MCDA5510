@@ -4,16 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-	static Connection connection = null;
+	Connection connection = null;
 
-	private DBConnection() {
+	public DBConnection() {
+		setupDBConnection();
 	}
 
-	public static Connection getDBConnection() {
+	public Connection getConnection() {
+		return connection;
+	}
+
+	final private Connection setupDBConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			connection = DriverManager.getConnection(
+			this.connection = DriverManager.getConnection(
 					"jdbc:mysql://dev.cs.smu.ca/a_gupta?user=a_gupta&password=A00428533&useSSL=false&AllowPublicKeyRetrieval=True&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
 
 		} catch (Exception e) {

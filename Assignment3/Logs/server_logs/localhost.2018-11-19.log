@@ -118,3 +118,8 @@
 19-Nov-2018 17:31:34.127 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@14229fa7')
 19-Nov-2018 17:39:17.214 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
 19-Nov-2018 17:39:17.214 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+19-Nov-2018 20:54:00.264 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+19-Nov-2018 20:54:00.266 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+19-Nov-2018 20:54:00.269 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@3ce53f6a')
+19-Nov-2018 20:58:11.394 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+19-Nov-2018 20:58:11.394 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

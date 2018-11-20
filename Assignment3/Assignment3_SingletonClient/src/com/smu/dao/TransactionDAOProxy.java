@@ -44,16 +44,10 @@ public class TransactionDAOProxy implements com.smu.dao.TransactionDAO {
     return transactionDAO;
   }
   
-  public com.smu.dto.TransactionDTO readDataBase(int trnxId) throws java.rmi.RemoteException{
+  public java.lang.String createResultSetInTable(int ID, java.lang.String nameOnCard, java.lang.String cardNumber, java.lang.String unitPrice, java.lang.String quantity, java.lang.String expDate, java.lang.String creditCardType) throws java.rmi.RemoteException{
     if (transactionDAO == null)
       _initTransactionDAOProxy();
-    return transactionDAO.readDataBase(trnxId);
-  }
-  
-  public boolean deleteRecord(int txnID) throws java.rmi.RemoteException{
-    if (transactionDAO == null)
-      _initTransactionDAOProxy();
-    return transactionDAO.deleteRecord(txnID);
+    return transactionDAO.createResultSetInTable(ID, nameOnCard, cardNumber, unitPrice, quantity, expDate, creditCardType);
   }
   
   public java.lang.String updateRecord(int ID, java.lang.String nameOnCard) throws java.rmi.RemoteException{
@@ -62,10 +56,16 @@ public class TransactionDAOProxy implements com.smu.dao.TransactionDAO {
     return transactionDAO.updateRecord(ID, nameOnCard);
   }
   
-  public java.lang.String createResultSetInTable(int ID, java.lang.String nameOnCard, java.lang.String cardNumber, java.lang.String unitPrice, java.lang.String quantity, java.lang.String expDate, java.lang.String creditCardType) throws java.rmi.RemoteException{
+  public boolean deleteRecord(int txnID) throws java.rmi.RemoteException{
     if (transactionDAO == null)
       _initTransactionDAOProxy();
-    return transactionDAO.createResultSetInTable(ID, nameOnCard, cardNumber, unitPrice, quantity, expDate, creditCardType);
+    return transactionDAO.deleteRecord(txnID);
+  }
+  
+  public com.smu.dto.TransactionDTO readDataBase(int trnxId) throws java.rmi.RemoteException{
+    if (transactionDAO == null)
+      _initTransactionDAOProxy();
+    return transactionDAO.readDataBase(trnxId);
   }
   
   

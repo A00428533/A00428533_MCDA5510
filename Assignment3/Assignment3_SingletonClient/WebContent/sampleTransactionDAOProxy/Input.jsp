@@ -61,8 +61,44 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">trnxId:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="trnxId38" SIZE=20></TD>
+<TD COLSPAN="1" ALIGN="LEFT">ID:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="ID16" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">nameOnCard:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="nameOnCard18" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">cardNumber:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cardNumber20" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">unitPrice:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="unitPrice22" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">quantity:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="quantity24" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">expDate:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="expDate26" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">creditCardType:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="creditCardType28" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -71,7 +107,30 @@ valid = false;
 </FORM>
 <%
 break;
-case 40:
+case 30:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">ID:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="ID33" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">nameOnCard:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="nameOnCard35" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 37:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -79,7 +138,7 @@ valid = false;
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">txnID:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="txnID43" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="txnID40" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -88,74 +147,15 @@ valid = false;
 </FORM>
 <%
 break;
-case 45:
+case 42:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">ID:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="ID48" SIZE=20></TD>
-</TR>
-</TABLE>
-<TABLE>
-<TR>
-<TD COLSPAN="1" ALIGN="LEFT">nameOnCard:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="nameOnCard50" SIZE=20></TD>
-</TR>
-</TABLE>
-<BR>
-<INPUT TYPE="SUBMIT" VALUE="Invoke">
-<INPUT TYPE="RESET" VALUE="Clear">
-</FORM>
-<%
-break;
-case 52:
-valid = false;
-%>
-<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
-<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
-<TABLE>
-<TR>
-<TD COLSPAN="1" ALIGN="LEFT">ID:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="ID55" SIZE=20></TD>
-</TR>
-</TABLE>
-<TABLE>
-<TR>
-<TD COLSPAN="1" ALIGN="LEFT">nameOnCard:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="nameOnCard57" SIZE=20></TD>
-</TR>
-</TABLE>
-<TABLE>
-<TR>
-<TD COLSPAN="1" ALIGN="LEFT">cardNumber:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="cardNumber59" SIZE=20></TD>
-</TR>
-</TABLE>
-<TABLE>
-<TR>
-<TD COLSPAN="1" ALIGN="LEFT">unitPrice:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="unitPrice61" SIZE=20></TD>
-</TR>
-</TABLE>
-<TABLE>
-<TR>
-<TD COLSPAN="1" ALIGN="LEFT">quantity:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="quantity63" SIZE=20></TD>
-</TR>
-</TABLE>
-<TABLE>
-<TR>
-<TD COLSPAN="1" ALIGN="LEFT">expDate:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="expDate65" SIZE=20></TD>
-</TR>
-</TABLE>
-<TABLE>
-<TR>
-<TD COLSPAN="1" ALIGN="LEFT">creditCardType:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="creditCardType67" SIZE=20></TD>
+<TD COLSPAN="1" ALIGN="LEFT">trnxId:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="trnxId67" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>

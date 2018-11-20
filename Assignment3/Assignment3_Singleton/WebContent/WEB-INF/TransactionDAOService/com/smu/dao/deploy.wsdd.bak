@@ -20,16 +20,6 @@
       <parameter name="className" value="com.smu.dao.TransactionDAOSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="TransactionDAO"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="readDataBase" qname="operNS:readDataBase" xmlns:operNS="http://dao.smu.com" returnQName="retNS:readDataBaseReturn" xmlns:retNS="http://dao.smu.com" returnType="rtns:TransactionDTO" xmlns:rtns="http://dto.smu.com" soapAction="" >
-        <parameter qname="pns:trnxId" xmlns:pns="http://dao.smu.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="deleteRecord" qname="operNS:deleteRecord" xmlns:operNS="http://dao.smu.com" returnQName="retNS:deleteRecordReturn" xmlns:retNS="http://dao.smu.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:txnID" xmlns:pns="http://dao.smu.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="updateRecord" qname="operNS:updateRecord" xmlns:operNS="http://dao.smu.com" returnQName="retNS:updateRecordReturn" xmlns:retNS="http://dao.smu.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:ID" xmlns:pns="http://dao.smu.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:nameOnCard" xmlns:pns="http://dao.smu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
       <operation name="createResultSetInTable" qname="operNS:createResultSetInTable" xmlns:operNS="http://dao.smu.com" returnQName="retNS:createResultSetInTableReturn" xmlns:retNS="http://dao.smu.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:ID" xmlns:pns="http://dao.smu.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:NameOnCard" xmlns:pns="http://dao.smu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
@@ -38,6 +28,16 @@
         <parameter qname="pns:Quantity" xmlns:pns="http://dao.smu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:ExpDate" xmlns:pns="http://dao.smu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:CreditCardType" xmlns:pns="http://dao.smu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updateRecord" qname="operNS:updateRecord" xmlns:operNS="http://dao.smu.com" returnQName="retNS:updateRecordReturn" xmlns:retNS="http://dao.smu.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ID" xmlns:pns="http://dao.smu.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nameOnCard" xmlns:pns="http://dao.smu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="deleteRecord" qname="operNS:deleteRecord" xmlns:operNS="http://dao.smu.com" returnQName="retNS:deleteRecordReturn" xmlns:retNS="http://dao.smu.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:txnID" xmlns:pns="http://dao.smu.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="readDataBase" qname="operNS:readDataBase" xmlns:operNS="http://dao.smu.com" returnQName="retNS:readDataBaseReturn" xmlns:retNS="http://dao.smu.com" returnType="rtns:TransactionDTO" xmlns:rtns="http://dto.smu.com" soapAction="" >
+        <parameter qname="pns:trnxId" xmlns:pns="http://dao.smu.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="readDataBase updateRecord createResultSetInTable deleteRecord"/>
 

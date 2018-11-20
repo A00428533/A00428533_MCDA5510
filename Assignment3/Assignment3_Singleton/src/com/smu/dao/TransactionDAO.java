@@ -19,6 +19,7 @@ import java.util.logging.SimpleFormatter;
 
 public class TransactionDAO {
 	Date now = new Date();
+	DBConnection dbcon = new DBConnection();
 	String datePatternFormat = "yyyy/MM/dd HH:mm:ss";
 	SimpleDateFormat dateformatter = new SimpleDateFormat(datePatternFormat);
 	String newDate = dateformatter.format(now);
@@ -38,7 +39,7 @@ public class TransactionDAO {
 			fh = new FileHandler("/home/student_2018_fall/a_gupta/MyLogFile.log", true);
 			logger.addHandler(fh);
 			fh.setFormatter(formatterTxt);
-			Connection conn = DBConnection.getDBConnection();
+			Connection conn = dbcon.getConnection();
 			preparedStatement = conn.prepareStatement("select * from a_gupta.transaction where ID=?");
 			if (trnxId != 0) {
 				preparedStatement.setInt(1, trnxId);
@@ -125,7 +126,7 @@ public class TransactionDAO {
 		}
 		if (Errorcount == 0) {
 			try {
-				Connection conn = DBConnection.getDBConnection();
+				Connection conn = dbcon.getConnection();
 				statement = conn.createStatement();
 				double totalPrice = Double.parseDouble(UnitPrice) + Double.parseDouble(Quantity);
 
@@ -189,7 +190,7 @@ public class TransactionDAO {
 	public boolean deleteRecord(int txnID) {
 		boolean output = false;
 		try {
-			Connection conn = DBConnection.getDBConnection();
+			Connection conn = dbcon.getConnection();
 			int cnt = 0;
 			preparedStatement = conn.prepareStatement("select * from a_gupta.transaction where ID=?");
 			if (txnID != 0) {
@@ -230,7 +231,7 @@ public class TransactionDAO {
 		StringBuilder sb = new StringBuilder();
 
 		try {
-			Connection conn = DBConnection.getDBConnection();
+			Connection conn = dbcon.getConnection();
 			int cnt = 0;
 			preparedStatement = conn.prepareStatement("select * from a_gupta.transaction where ID=?");
 			if (ID != 0) {

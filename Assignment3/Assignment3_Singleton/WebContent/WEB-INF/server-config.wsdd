@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -33,24 +33,24 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="TransactionDAO" provider="java:RPC" style="wrapped" use="literal">
-  <ns3:operation name="readDataBase" qname="ns1:readDataBase" returnQName="ns1:readDataBaseReturn" returnType="ns2:TransactionDTO" soapAction="" xmlns:ns1="http://dao.smu.com" xmlns:ns2="http://dto.smu.com" xmlns:ns3="http://xml.apache.org/axis/wsdd/">
-   <ns3:parameter qname="ns1:trnxId" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  </ns3:operation>
+  <ns2:operation name="createResultSetInTable" qname="ns1:createResultSetInTable" returnQName="ns1:createResultSetInTableReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://dao.smu.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:ID" type="xsd:int"/>
+   <ns2:parameter qname="ns1:NameOnCard" type="xsd:string"/>
+   <ns2:parameter qname="ns1:CardNumber" type="xsd:string"/>
+   <ns2:parameter qname="ns1:UnitPrice" type="xsd:string"/>
+   <ns2:parameter qname="ns1:Quantity" type="xsd:string"/>
+   <ns2:parameter qname="ns1:ExpDate" type="xsd:string"/>
+   <ns2:parameter qname="ns1:CreditCardType" type="xsd:string"/>
+  </ns2:operation>
+  <ns1:operation name="updateRecord" qname="ns2:updateRecord" returnQName="ns2:updateRecordReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://dao.smu.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:ID" type="xsd:int"/>
+   <ns1:parameter qname="ns2:nameOnCard" type="xsd:string"/>
+  </ns1:operation>
   <ns1:operation name="deleteRecord" qname="ns3:deleteRecord" returnQName="ns3:deleteRecordReturn" returnType="xsd:boolean" soapAction="" xmlns:ns3="http://dao.smu.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns3:txnID" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="updateRecord" qname="ns4:updateRecord" returnQName="ns4:updateRecordReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://dao.smu.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns4:ID" type="xsd:int"/>
-   <ns1:parameter qname="ns4:nameOnCard" type="xsd:string"/>
-  </ns1:operation>
-  <ns1:operation name="createResultSetInTable" qname="ns5:createResultSetInTable" returnQName="ns5:createResultSetInTableReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://dao.smu.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns5:ID" type="xsd:int"/>
-   <ns1:parameter qname="ns5:NameOnCard" type="xsd:string"/>
-   <ns1:parameter qname="ns5:CardNumber" type="xsd:string"/>
-   <ns1:parameter qname="ns5:UnitPrice" type="xsd:string"/>
-   <ns1:parameter qname="ns5:Quantity" type="xsd:string"/>
-   <ns1:parameter qname="ns5:ExpDate" type="xsd:string"/>
-   <ns1:parameter qname="ns5:CreditCardType" type="xsd:string"/>
+  <ns1:operation name="readDataBase" qname="ns4:readDataBase" returnQName="ns4:readDataBaseReturn" returnType="ns5:TransactionDTO" soapAction="" xmlns:ns4="http://dao.smu.com" xmlns:ns5="http://dto.smu.com">
+   <ns1:parameter qname="ns4:trnxId" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="readDataBase updateRecord createResultSetInTable deleteRecord"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>

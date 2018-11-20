@@ -5,31 +5,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://dao.smu.com" xmlns="http://www.w3.org/2001/XMLSchema">
    <import namespace="http://dto.smu.com"/>
-   <element name="readDataBase">
+   <element name="createResultSetInTable">
     <complexType>
      <sequence>
-      <element name="trnxId" type="xsd:int"/>
+      <element name="ID" type="xsd:int"/>
+      <element name="NameOnCard" type="xsd:string"/>
+      <element name="CardNumber" type="xsd:string"/>
+      <element name="UnitPrice" type="xsd:string"/>
+      <element name="Quantity" type="xsd:string"/>
+      <element name="ExpDate" type="xsd:string"/>
+      <element name="CreditCardType" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="readDataBaseResponse">
+   <element name="createResultSetInTableResponse">
     <complexType>
      <sequence>
-      <element name="readDataBaseReturn" type="tns1:TransactionDTO"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="deleteRecord">
-    <complexType>
-     <sequence>
-      <element name="txnID" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="deleteRecordResponse">
-    <complexType>
-     <sequence>
-      <element name="deleteRecordReturn" type="xsd:boolean"/>
+      <element name="createResultSetInTableReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -48,23 +40,31 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="createResultSetInTable">
+   <element name="deleteRecord">
     <complexType>
      <sequence>
-      <element name="ID" type="xsd:int"/>
-      <element name="NameOnCard" type="xsd:string"/>
-      <element name="CardNumber" type="xsd:string"/>
-      <element name="UnitPrice" type="xsd:string"/>
-      <element name="Quantity" type="xsd:string"/>
-      <element name="ExpDate" type="xsd:string"/>
-      <element name="CreditCardType" type="xsd:string"/>
+      <element name="txnID" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="createResultSetInTableResponse">
+   <element name="deleteRecordResponse">
     <complexType>
      <sequence>
-      <element name="createResultSetInTableReturn" type="xsd:string"/>
+      <element name="deleteRecordReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="readDataBase">
+    <complexType>
+     <sequence>
+      <element name="trnxId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="readDataBaseResponse">
+    <complexType>
+     <sequence>
+      <element name="readDataBaseReturn" type="tns1:TransactionDTO"/>
      </sequence>
     </complexType>
    </element>
@@ -88,6 +88,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
+   <wsdl:message name="createResultSetInTableRequest">
+
+      <wsdl:part element="impl:createResultSetInTable" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="deleteRecordRequest">
 
       <wsdl:part element="impl:deleteRecord" name="parameters">
@@ -99,14 +107,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="deleteRecordResponse">
 
       <wsdl:part element="impl:deleteRecordResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="createResultSetInTableRequest">
-
-      <wsdl:part element="impl:createResultSetInTable" name="parameters">
 
       </wsdl:part>
 
@@ -136,14 +136,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="readDataBaseRequest">
-
-      <wsdl:part element="impl:readDataBase" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
    <wsdl:message name="updateRecordResponse">
 
       <wsdl:part element="impl:updateRecordResponse" name="parameters">
@@ -152,27 +144,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="readDataBaseRequest">
+
+      <wsdl:part element="impl:readDataBase" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:portType name="TransactionDAO">
 
-      <wsdl:operation name="readDataBase">
+      <wsdl:operation name="createResultSetInTable">
 
-         <wsdl:input message="impl:readDataBaseRequest" name="readDataBaseRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:readDataBaseResponse" name="readDataBaseResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="deleteRecord">
-
-         <wsdl:input message="impl:deleteRecordRequest" name="deleteRecordRequest">
+         <wsdl:input message="impl:createResultSetInTableRequest" name="createResultSetInTableRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:deleteRecordResponse" name="deleteRecordResponse">
+         <wsdl:output message="impl:createResultSetInTableResponse" name="createResultSetInTableResponse">
 
        </wsdl:output>
 
@@ -190,13 +178,25 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createResultSetInTable">
+      <wsdl:operation name="deleteRecord">
 
-         <wsdl:input message="impl:createResultSetInTableRequest" name="createResultSetInTableRequest">
+         <wsdl:input message="impl:deleteRecordRequest" name="deleteRecordRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:createResultSetInTableResponse" name="createResultSetInTableResponse">
+         <wsdl:output message="impl:deleteRecordResponse" name="deleteRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readDataBase">
+
+         <wsdl:input message="impl:readDataBaseRequest" name="readDataBaseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:readDataBaseResponse" name="readDataBaseResponse">
 
        </wsdl:output>
 
@@ -208,35 +208,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="readDataBase">
+      <wsdl:operation name="createResultSetInTable">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="readDataBaseRequest">
+         <wsdl:input name="createResultSetInTableRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="readDataBaseResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="deleteRecord">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="deleteRecordRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="deleteRecordResponse">
+         <wsdl:output name="createResultSetInTableResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -262,17 +244,35 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="createResultSetInTable">
+      <wsdl:operation name="deleteRecord">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="createResultSetInTableRequest">
+         <wsdl:input name="deleteRecordRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="createResultSetInTableResponse">
+         <wsdl:output name="deleteRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readDataBase">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="readDataBaseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="readDataBaseResponse">
 
             <wsdlsoap:body use="literal"/>
 

@@ -8,8 +8,8 @@
 package com.smu.dao;
 
 public interface TransactionDAO extends java.rmi.Remote {
-    public com.smu.dto.TransactionDTO readDataBase(int trnxId) throws java.rmi.RemoteException;
-    public boolean deleteRecord(int txnID) throws java.rmi.RemoteException;
-    public java.lang.String updateRecord(int ID, java.lang.String nameOnCard) throws java.rmi.RemoteException;
     public java.lang.String createResultSetInTable(int ID, java.lang.String nameOnCard, java.lang.String cardNumber, java.lang.String unitPrice, java.lang.String quantity, java.lang.String expDate, java.lang.String creditCardType) throws java.rmi.RemoteException;
+    public java.lang.String updateRecord(int ID, java.lang.String nameOnCard) throws java.rmi.RemoteException;
+    public boolean deleteRecord(int txnID) throws java.rmi.RemoteException;
+    public com.smu.dto.TransactionDTO readDataBase(int trnxId) throws java.rmi.RemoteException;
 }
